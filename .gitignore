@@ -1,0 +1,6 @@
+# Vim swap
+*.sw*
+
+# Unwanted TeX artifacts
+*.aux
+*.log
