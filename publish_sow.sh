@@ -9,7 +9,7 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 
 # Update the SOW hash with the real md5 hash of the SOW markdown. Then publish
 # to PDF.
-sed "/sow_hash/s/$/ `md5sum $1 | cut -c -8`/" $1 \
+sed "/document_hash/s/$/ `md5sum $1 | cut -c -8`/" $1 \
 	| pandoc --template=${SCRIPTPATH}/template_for_sow.tex \
 	-o `echo $1 | sed "s/md/pdf/"`
 

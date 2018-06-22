@@ -28,17 +28,20 @@
 	\end{tabular}
 }
 
-{\noindent \huge \textbf{Statement of Work}}
+{\noindent \huge \textbf{$proposal_type$}}
 
 \bigskip
 
 \noindent\begin{tabular}{rl}
 	Consultant: & $consultant_name$ \\
-	Date: & $sow_date$ \\
-	Reference number: & \texttt{$sow_hash$} \\
+	Date: & $document_date$ \\
+	Reference number: & \texttt{$document_hash$} \\
 	Client: & $client_name$ \\
 	Client Representative: & $client_representative$ \\
+	% Only discrete projects, not retainers, have specific titles
+	$if(project_title)$
 	Project Title: & $project_title$
+	$endif$
 \end{tabular}
 
 % SOW body goes here
