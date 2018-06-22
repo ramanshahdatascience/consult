@@ -7,8 +7,8 @@ SCRIPT=$(readlink -f "$0")
 # Absolute path this script is in, thus /home/user/bin
 SCRIPTPATH=$(dirname "$SCRIPT")
 
-# Update the SOW hash with the real md5 hash of the SOW markdown. Then publish
-# to PDF.
+# Update the proposal hash with the real md5 hash of the proposal markdown.
+# Then publish to PDF.
 sed "/document_hash/s/$/ `md5sum $1 | cut -c -8`/" $1 \
 	| pandoc --template=${SCRIPTPATH}/consult_template.tex \
 	-o `echo $1 | sed "s/md/pdf/"`
