@@ -11,5 +11,5 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 # Then publish to PDF.
 sed "/document_hash/s/$/ `md5sum $1 | cut -c -8`/" $1 \
 	| pandoc --template=${SCRIPTPATH}/consult_template.tex \
-	-o `echo $1 | sed "s/md/pdf/"`
+	-o `echo $1 | sed "s/\.md/.pdf/"`
 
