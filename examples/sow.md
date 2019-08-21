@@ -1,7 +1,7 @@
 ---
 marketing_name: "Wile E. Coyote"
 byline: "Land bird catching"
-proposal_type: "Statement of Work"
+doc_title: "Statement of Work"
 consultant_name: "Wile E. Coyote"
 document_date: "17 September 1949"
 document_hash:
