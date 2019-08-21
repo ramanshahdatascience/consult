@@ -8,6 +8,7 @@ document_hash:
 client_name: Acme Anvils
 client_representative: Jebediah Springfield
 project_title: "Roadrunner Crushing Proof of Concept"
+acceptance_page: true
 agreement_text: |
     The parties hereto verify that the terms of this Statement of Work are
     acceptable. The Client Representative verifies that he or she is authorized
