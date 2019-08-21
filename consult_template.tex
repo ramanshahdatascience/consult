@@ -11,6 +11,10 @@
 	}
 }
 
+% pdflatex options for reproducible builds
+\pdfinfoomitdate=1
+\pdftrailerid{}
+
 % Patches to get Pandoc to work
 \let\tightlist\relax
 \newcommand{\hypertarget}[2]{#2}
@@ -33,7 +37,9 @@
 \bigskip
 
 \noindent\begin{tabular}{rl}
+	$if(consultant_name)$
 	Consultant: & $consultant_name$ \\
+	$endif$
 	Date: & $document_date$ \\
 	Reference number: & \texttt{$document_hash$} \\
 	Client: & $client_name$ \\
