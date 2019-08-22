@@ -1,5 +1,8 @@
 \documentclass{article}
 
+$if(logo)$
+
+$else$
 % Package plus helper to place consulting business info
 % Thanks to @Werner on the TeX Stack Exchange:
 % https://tex.stackexchange.com/posts/24675/revisions
@@ -10,6 +13,7 @@
 		\put(\LenToUnit{#1\paperwidth},\LenToUnit{#2\paperheight}){\vtop{{\null}\makebox[0pt][c]{#3}}}%
 	}
 }
+$endif$
 
 % pdflatex options for reproducible builds
 \pdfinfoomitdate=1
@@ -24,6 +28,9 @@
 
 \begin{document}
 
+$if(logo)$
+
+$else$
 % Text name/title in upper right
 \placetextbox{0.81}{0.95}{
 	\begin{tabular}[t]{r}
@@ -31,6 +38,7 @@
 		\textit{$byline$}
 	\end{tabular}
 }
+$endif$
 
 {\noindent \huge \textbf{$doc_title$}}
 
