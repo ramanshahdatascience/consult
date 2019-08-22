@@ -40,6 +40,9 @@
 	$if(consultant_name)$
 	Consultant: & $consultant_name$ \\
 	$endif$
+	$if(consultant_representative)$
+	Consultant Representative: & $consultant_representative$ \\
+	$endif$
 	Date: & $document_date$ \\
 	Reference number: & \texttt{$document_hash$} \\
 	Client: & $client_name$ \\
@@ -69,8 +72,15 @@ $agreement_text$
 	Client &
 	Consultant \\
 [4ex]
+	$if(consultant_representative)$
+	\underline{\makebox[2.5in][l]{\smash{$client_representative$}}} &
+	\underline{\makebox[2.5in][l]{\smash{$consultant_representative$}}} \\
+	Client Representative &
+	Consultant Representative \\
+	$else$
 	\underline{\makebox[2.5in][l]{\smash{$client_representative$}}} \\
 	Client Representative \\
+	$endif$
 [4ex]
 	\underline{\makebox[2.5in][l]{}} &
 	\underline{\makebox[2.5in][l]{}} \\
