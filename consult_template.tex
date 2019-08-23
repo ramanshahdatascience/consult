@@ -1,7 +1,7 @@
 \documentclass{article}
 
-$if(logo)$
-
+$if(logo_path)$
+\usepackage{wallpaper}
 $else$
 % Package plus helper to place consulting business info
 % Thanks to @Werner on the TeX Stack Exchange:
@@ -28,8 +28,10 @@ $endif$
 
 \begin{document}
 
-$if(logo)$
-
+$if(logo_path)$
+% Patch in logo file, preserving aspect ratio, limiting size to 20% of page
+% (width 20% of page width or height 20% of page height, whichever is smaller)
+\ThisURCornerWallPaper{0.30}{$logo_path$}
 $else$
 % Text name/title in upper right
 \placetextbox{0.81}{0.95}{
@@ -55,7 +57,6 @@ $endif$
 	Reference number: & \texttt{$document_hash$} \\
 	Client: & $client_name$ \\
 	Client Representative: & $client_representative$ \\
-	% Only discrete projects, not retainers, have specific titles
 	$if(project_title)$
 	Project Title: & $project_title$
 	$endif$
@@ -65,8 +66,8 @@ $endif$
 % here
 $body$
 
-% Acceptance page
 $if(acceptance_page)$
+% Acceptance page
 \pagebreak
 \section{Acceptance}
 
